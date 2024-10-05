@@ -1,0 +1,195 @@
+.hero{
+  max-width: 22.5rem;
+  width: 100%;
+  padding: 1rem 1.5rem 3rem;
+  margin-inline: auto;
+
+  & h1 div{
+    display: inline-block;
+    width: min-content;
+    height: 2.313rem;
+    overflow: hidden;
+    vertical-align: bottom;
+  }
+
+  & h1 span:nth-child(1),
+  & h1 span:nth-child(4){
+    color: var(--snitap-sky-mid);
+  }
+
+  & h1 span:nth-child(2){
+    color: var(--snitap-joy-mid);
+  }
+
+  & h1 span:nth-child(3){
+    color: var(--snitap-leaf-mid);
+  }
+
+  & h1 span{
+    display: block;
+
+    animation: slideUp 6s infinite ease;
+  }
+}
+
+@keyframes slideUp{
+  0%, 22% {
+    transform: translateY(0);
+  }
+
+  /* divertida */
+
+  23% {
+    transform: translateY(calc(-2.6rem - 15px));
+  }
+
+  25% {
+    transform: translateY(calc(-2.6rem + 10px));
+  }
+
+  27% {
+    transform: translateY(calc(-2.6rem - 5px));
+  }
+
+  29% {
+    transform: translateY(calc(-2.6rem + 5px));
+  }
+
+  33%, 55% {
+    transform: translateY(-2.6rem);
+  }
+
+  /* saudavel */
+
+  57% {
+    transform: translateY(calc(-5.2rem - 15px));
+  }
+
+  59% {
+    transform: translateY(calc(-5.2rem + 10px));
+  }
+
+  61% {
+    transform: translateY(calc(-5.2rem - 5px));
+  }
+
+  63% {
+    transform: translateY(calc(-5.2rem + 5px));
+  }
+
+  66%, 88% {
+    transform: translateY(-5.2rem);
+  }
+
+  /* radical */
+
+  90% {
+    transform: translateY(calc(-7.6rem - 15px));
+  }
+
+  92% {
+    transform: translateY(calc(-7.6rem + 10px));
+  }
+
+  94% {
+    transform: translateY(calc(-7.6rem - 5px));
+  }
+
+  96% {
+    transform: translateY(calc(-7.6rem + 5px));
+  }
+
+  100% {
+    transform: translateY(-7.6rem);
+    
+  }
+ 
+}
+
+@media (width >= 80em){
+  .hero{
+    max-width: 80rem;
+    padding: 2.5rem 2rem;
+
+    & h1{
+      max-width: 40rem;
+    }
+    
+    & h1 div{
+      height: 5rem;
+    }
+  }
+
+  @keyframes slideUp{
+    0%, 22% {
+      transform: translateY(0);
+    }
+    
+    /* divertida */
+
+    23% {
+      transform: translateY(calc(-5rem - 15px));
+    }
+
+    25% {
+      transform: translateY(calc(-5rem + 10px));
+    }
+
+    27% {
+      transform: translateY(calc(-5rem - 5px));
+    }
+
+    29% {
+      transform: translateY(calc(-5rem + 5px));
+    }
+
+    /* saudavel */
+  
+    33%, 55% {
+      transform: translateY(-5rem);
+    }
+
+    56% {
+      transform: translateY(calc(-10rem - 15px));
+    }
+
+    58% {
+      transform: translateY(calc(-10rem + 10px));
+    }
+
+    60%{
+      transform: translateY(calc(-10rem - 5px));
+    }
+
+    62%{
+      transform: translateY(calc(-10rem + 5px));
+    }
+
+    /* radical */
+  
+    66%, 88% {
+      transform: translateY(-10rem);
+    }
+
+    90% {
+      transform: translateY(calc(-15rem - 15px));
+    }
+
+    92% {
+      transform: translateY(calc(-15rem + 10px));
+    }
+
+    94%{
+      transform: translateY(calc(-15rem - 5px));
+    }
+
+    96%{
+      transform: translateY(calc(-15rem + 5px));
+    }
+  
+    100% {
+      transform: translateY(-15rem);
+    }
+  }
+
+}
