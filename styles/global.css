@@ -32,6 +32,8 @@ html, button{
   font: 500 1rem/1.5 var(--ff-montserrat);
 }
 
+
+
 h1, h2{
   font-family: var(--ff-syne);
 }

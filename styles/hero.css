@@ -1,8 +1,12 @@
 .hero{
+  display: flex;
+  align-items: center;
+  flex-direction: column-reverse;
   max-width: 22.5rem;
   width: 100%;
   padding: 1rem 1.5rem 3rem;
   margin-inline: auto;
+  overflow: hidden;
 
   & h1 div{
     display: inline-block;
@@ -46,7 +50,9 @@
       
       &.buy{
         background-color: var(--snitap-sun);
-        display: inline-block;
+        /* display: inline-block; */
+        align-items: center;
+        white-space: nowrap;
         padding: 1.5rem 2.81rem;
       }
 
@@ -64,6 +70,46 @@
       0 9px 9px rgb(0 0 0 / .09),
       0 20px 12px rgb(0 0 0 / .05),
       0 36px 15px rgb(0 0 0 / .01);
+    }
+  }
+
+  & > div:nth-child(2){
+    display: block;
+    width: 100%;
+    max-width: 19.5rem;
+    height: 19.5rem;
+
+    & .content{
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+
+    & img{
+      position: absolute;
+      width: 100%;
+    }
+
+    & img[src*="ellipse"]{
+      width: 94%;
+      top: 3%;
+      left: 3%;
+    }
+
+    & img[src*="patins"]{
+      z-index: 1;
+    }
+
+    & img[src*="starsUm"]{
+      max-width: 3.5rem;
+      top: 30%;
+      z-index: 0;
+    }
+
+    & img[src*="starsDois"]{
+      max-width: 1.5rem;
+      bottom: 35%;
+      right: 0;
     }
   }
 }
@@ -144,6 +190,8 @@
 
 @media (width >= 80em){
   .hero{
+    justify-content: space-between;
+    flex-direction: row;
     max-width: 80rem;
     padding: 2.5rem 2rem;
 
@@ -164,8 +212,53 @@
         scale: 1.1;
       }
     }
+
+    & > div:nth-child(2){
+      max-width: 30.5rem;
+      height: 30.5rem;
+
+      & .content{
+        & img[src*="ellipse"]{
+          transform: translateX(200%);
+          animation: slideIn 3s 300ms ease forwards;
+        }
+
+        & img[src*="patins"]{
+          transform: translateX(200%);
+          animation: slideIn 3s ease forwards;
+        }
+
+        & img[src*="starsUm"]{
+          max-width: 5.5rem;
+          opacity: 0;
+          transform: translateX(400%);
+          animation: slideIn 2s 800ms ease both, appear 100ms 800ms both;
+        }
+
+        & img[src*="starsDois"]{
+          max-width: 2.5rem;
+          transform: translateX(400%);
+          animation: slideIn 2.2s 800ms ease both;
+        }
+      }
+    }
   }
 
+  @keyframes slideIn{
+    50%{
+      transform: translateX(-20px);
+    }
+
+    100%{
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes appear{
+    to{
+      opacity: 1;
+    }
+  }
 
   @keyframes slideUp{
     0%, 22% {
