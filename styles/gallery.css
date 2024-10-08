@@ -1,0 +1,151 @@
+.gallery{
+  width: 100%;
+  max-width: 22.5rem;
+  padding: 1.5rem;
+  margin-inline: auto;
+  
+  & header{
+    text-align: center;
+  }
+
+  & header span{
+    font: 500 var(--text-sm)/1.5 var(--ff-montserrat);
+  }
+
+  & img{
+    width: 100%;
+    height: auto;
+  }
+
+  & .content{
+    margin-top: 1.5rem;
+    display: grid;
+    grid-template-areas: 
+      "A"
+      "B"
+      "C"
+      "D";
+
+    gap: 1.5rem;
+  }
+
+  & figure{
+    position: relative;
+    border-radius: 2.5rem;
+    overflow: hidden;
+    line-height: 0;
+
+    & > img{
+      height: 16rem;
+      object-fit: cover;
+    }
+
+    &:nth-child(1){
+      grid-area: A;
+    }
+
+    &:nth-child(2){
+      grid-area: B;
+
+    }
+
+    &:nth-child(3){
+      grid-area: C;
+    }
+
+    &:nth-child(4){
+      grid-area: D;
+    }
+  }
+
+  & figcaption{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    
+    font: 500 var(--text-sm)/1.5 var(--ff-montserrat);
+    color: white;
+
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+    padding: 1rem 1.5rem;
+
+    background: linear-gradient(
+      to top,
+      rgb(0 0 0 / 0.64),
+      rgb(0 0 0 / 0)
+    );
+
+    & > img{
+      width: 2rem;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+  }
+}
+
+@media (width >= 80em){
+  .gallery{
+    max-width: 80rem;
+    padding: 2.5rem 2rem;
+
+    & header span{
+      font: 500 var(--text-sm)/1.5 var(--ff-montserrat);
+    }
+
+    & .content{
+      margin-top: 2rem;
+      grid-template-areas: 
+      "A B B"
+      "C C D";
+
+      gap: 2.5rem;
+    }  
+
+    & figure{
+      animation: image-appear linear backwards;
+      animation-timeline: view();
+      animation-range: 100px 300px;
+
+      &[data-delay]{
+        animation-range: 150px 350px;
+      }
+
+      & > img {
+        height: 25rem;
+        transition: scale 500ms;
+      }
+
+      &:hover{
+        & > img{
+          scale: 1.1;
+        }
+
+        figcaption{
+          transform: translateY(0);
+        }
+      }
+    }
+
+    & figcaption{
+      justify-content: flex-end;
+      padding: 1.5rem 2rem;
+
+      transform: translateY(100%);
+      transition: transform 500ms;
+      
+    }
+
+  }
+
+  @keyframes image-appear{
+    from{
+      opacity: 0;
+      transform: translateY(100%);
+
+    }
+  }
+}

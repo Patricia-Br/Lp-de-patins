@@ -22,7 +22,7 @@
   --ff-montserrat: "Montserrat", sans-serif;
   --ff-inter: "Inter", sans-serif;
 
-  --text-sm: 0.875rem;
+  --text-sm: 0.75rem;
   --text-base: 1rem;
   --text-lg: 2.5rem;
   --text-xl: 4rem;
@@ -31,8 +31,6 @@
 html, button{
   font: 500 1rem/1.5 var(--ff-montserrat);
 }
-
-
 
 h1, h2{
   font-family: var(--ff-syne);
